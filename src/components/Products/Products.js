@@ -1,8 +1,10 @@
 import React from 'react';
 import './Products.css';
 import { connect } from 'react-redux';
-import NavBar from './../NavBar/NavBar';
+import Header from './../Header/Header';
 import { addToCart } from '../../ducks/productsReducer';
+import Footer from './../Footer/Footer';
+
 
 
 class Products extends React.Component {
@@ -19,8 +21,10 @@ class Products extends React.Component {
       return (
         <div key={i}>
         <img src={item.img} />
+        <div className="shoeDetails">
         <h3>{item.name}</h3>
         <p>{item.price}</p>
+        </div>
         <button onClick={() => this.props.addToCart(item)}>Add To Cart</button>
         </div>
 
@@ -29,10 +33,12 @@ class Products extends React.Component {
 
     const productsFemale = this.props.products.filter((item) => item.gender === 'f').map((item, i) => {
       return (
-        <div key={i}>
+      <div key={i}>
       <img src={item.img} />
+      <div className="shoeDetails">
       <h3>{item.name}</h3>
       <p>{item.price}</p>
+      </div>
       <button onClick={() => this.props.addToCart(item)}>Add To Cart</button>
       </div>
       )
@@ -40,12 +46,16 @@ class Products extends React.Component {
 
     return (
     <div>
-    <h1>PRODUCTS ROUTE</h1>
-    <NavBar />
-    <h2> Mens Shoes</h2>
+    <Header />
+    <h2 className="genderHeader"> Mens Shoes</h2>
+    <div className="mensShoes">
     {productsMale}
-    <h2>Womens Shoes</h2>
+    </div>
+    <h2 className="genderHeader">Womens Shoes</h2>
+    <div className="womensShoes">
     {productsFemale}
+    </div>
+    <Footer />
     </div>
 
     )

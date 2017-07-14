@@ -1,16 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
+import './NavBar.css';
 
 function NavBar(props) {
-  console.log(props);
+  // console.log(props);
   return (
-    <div>
-      <Link to="/">
-      <p>HOME</p>
-      </Link>
+
+    <div className="navBar">
+    <div className="returnsText">
+    <p className="freeReturns">Free shipping and free returns.</p>
+    </div>
       <Link to="/products">
-      <p>STORE</p>
+      <p>SHOES</p>
       </Link>
       <Link to="/cart">
       <p>CART ({props.cart.length})</p>

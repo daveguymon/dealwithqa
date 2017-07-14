@@ -1,1 +1,36 @@
 
+.mensShoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+.womensShoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+
+}
+
+button {
+  background-color: #F98A22;
+  border-radius: 5px;
+  color: white;
+}
+
+.genderHeader {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.shoeDetails {
+  line-height: 1.3;
+  margin-bottom: 4px;
+}

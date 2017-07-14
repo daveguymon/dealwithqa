@@ -1,8 +1,10 @@
 import React from 'react';
 import './Cart.css';
-import NavBar from './../NavBar/NavBar';
+import Header from './../Header/Header';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../ducks/productsReducer';
+import Content from './../Content/Content';
+import Footer from './../Footer/Footer';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -18,17 +20,22 @@ class Cart extends React.Component {
       return (
         <div key={i}>
         <img src={item.img} />
+        <div className="shoeDetails">
         <h3>{item.name}</h3>
         <p>{item.price}</p>
+        </div>
         <button onClick={()=> this.props.removeFromCart(i)}>Remove</button>
         </div>
       )
     })
     return(
     <div>
-    <h1>CART COMPONENT</h1>
-    <NavBar />
+
+    <Header />
+    <div className='contentsContainer'>
     {productsInCart}
+    </div>
+    <Footer />
     </div>
     )
   }

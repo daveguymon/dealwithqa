@@ -1,0 +1,27 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 60vw;
+  margin-right: 16px;
+  border-bottom: solid 1px grey;
+  padding-bottom: 8px;
+}
+
+
+.freeReturns {
+  color: grey;
+  margin-right: 16px;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media(max-width: 600px) {
+  .returnsText {
+    display: none;
+  }
+}
