@@ -1,7 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default function NavBar() {
+function NavBar(props) {
+  console.log(props);
   return (
     <div>
       <Link to="/">
@@ -11,8 +13,16 @@ export default function NavBar() {
       <p>STORE</p>
       </Link>
       <Link to="/cart">
-      <p>CART</p>
+      <p>CART ({props.cart.length})</p>
       </Link>
     </div>
   )
 }
+
+function mapStateToProps(state) {
+  return {
+    cart: state.cart
+  }
+}
+
+export default connect(mapStateToProps)(NavBar);

@@ -5,36 +5,51 @@ import NavBar from './../NavBar/NavBar';
 import { addToCart } from '../../ducks/productsReducer';
 
 
-// class Products extends React.Component {
-//   constructor(props){
-//     super(props);
-//     this.state={
-//
-//     }
-//   }
-//
-//   render(){
-function Products(props) {
-    console.log(props)
-    const products = props.products.map((item, i) => {
+class Products extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+
+    }
+  }
+
+  render(){
+
+    const productsMale = this.props.products.filter((item)=> item.gender === 'm').map((item, i) => {
       return (
         <div key={i}>
         <img src={item.img} />
         <h3>{item.name}</h3>
         <p>{item.price}</p>
-        <button onClick={() => props.addToCart(item)}>Add To Cart</button>
+        <button onClick={() => this.props.addToCart(item)}>Add To Cart</button>
         </div>
 
       )
     })
+
+    const productsFemale = this.props.products.filter((item) => item.gender === 'f').map((item, i) => {
+      return (
+        <div key={i}>
+      <img src={item.img} />
+      <h3>{item.name}</h3>
+      <p>{item.price}</p>
+      <button onClick={() => this.props.addToCart(item)}>Add To Cart</button>
+      </div>
+      )
+    })
+
     return (
-      <div>
+    <div>
     <h1>PRODUCTS ROUTE</h1>
     <NavBar />
-    {products}
+    <h2> Mens Shoes</h2>
+    {productsMale}
+    <h2>Womens Shoes</h2>
+    {productsFemale}
     </div>
 
     )
+}
 }
 
 
@@ -46,9 +61,5 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(
-  mapStateToProps,
-  {
-    addToCart
-  }
-)(Products)
+export default connect(mapStateToProps,
+  {addToCart})(Products)
