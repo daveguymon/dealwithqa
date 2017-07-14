@@ -5,9 +5,28 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 .shoeDetails {
   line-height: 1.3;
   margin-bottom: 4px;
+}
+
+.emptyText {
+  font-size: 40px;
+  color: silver;
+  display: flex;
+}
+
+@media(min-width: 1000px) {
+  .contentsContainer {
+    min-height: 62vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
 }

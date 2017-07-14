@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { removeFromCart } from '../../ducks/productsReducer';
 import Content from './../Content/Content';
 import Footer from './../Footer/Footer';
+import './Cart.css';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Cart extends React.Component {
 
     <Header />
     <div className='contentsContainer'>
-    {productsInCart}
+    {productsInCart.length ? productsInCart : <h1 className="emptyText">EMPTY CART</h1>}
     </div>
     <Footer />
     </div>
