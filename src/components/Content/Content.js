@@ -39,18 +39,11 @@ export default class Content extends React.Component {
 
   render() {
 
-
-        function handleClick(e){
-          e.preventDefault();
-          console.log("Oh, snap! This shouldn't be here.")
-        }
-
-
         const featureStories = this.state.features.map((story, i) => {
           return (
             <div key={i} className="indivStory">
             <Link to={story.link}>
-            <img onClick={handleClick} src={story.img} />
+            <img src={story.img} />
             </Link>
             <h4 className="storyh4">{story.heading}</h4>
             <div className="scriptTextContainer">
