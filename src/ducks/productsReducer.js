@@ -5,7 +5,8 @@ const initialState ={
       name: 'Adrenaline GTS 17',
       price: '$150.00',
       img: './images/mens_adrenaline_gts_17.jpg',
-      gender: 'm'
+      gender: 'm',
+      style: '27px'
     },
     {
       id: 2,
@@ -33,7 +34,8 @@ const initialState ={
       name: 'Ghost 10',
       price: '$130.00',
       img: './images/mens_ghost_10.jpg',
-      gender: 'm'
+      gender: 'm',
+      style: 'marginLeft: 0px'
     },
     {
       id: 6,

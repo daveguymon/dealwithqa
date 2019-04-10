@@ -18,6 +18,11 @@ class Products extends React.Component {
   render(){
 
     const productsMale = this.props.products.filter((item)=> item.gender === 'm').map((item, i) => {
+
+      const offset = {
+        marginLeft: item.style
+      }
+
       return (
         <div key={i}>
         <img src={item.img} />
@@ -25,7 +30,7 @@ class Products extends React.Component {
         <h3>{item.name}</h3>
         <p>{item.price}</p>
         </div>
-        <button onClick={() => this.props.addToCart(item)}>Add To Cart</button>
+        <button style={offset} onClick={() => this.props.addToCart(item)}>Add To Cart</button>
         </div>
 
       )
@@ -47,7 +52,7 @@ class Products extends React.Component {
     return (
     <div>
     <Header />
-    <h2 className="genderHeader"> Mens Shoes</h2>
+    <h2 className="genderHeader">Mens Shoes</h2>
     <div className="mensShoes">
     {productsMale}
     </div>

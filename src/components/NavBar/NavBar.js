@@ -15,7 +15,7 @@ function NavBar(props) {
       <p>SHOES</p>
       </Link>
       <Link to="/cart">
-      <p>CART ({props.cart.length})</p>
+      <p>CART ({props.cart.length < 3 ? props.cart.length : 0})</p>
       </Link>
     </div>
   )
